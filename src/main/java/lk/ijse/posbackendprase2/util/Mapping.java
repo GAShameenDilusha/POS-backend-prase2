@@ -1,9 +1,6 @@
 package lk.ijse.posbackendprase2.util;
 
-
-import lk.ijse.posbackendprase2.dto.impl.UserDto;
 import lk.ijse.posbackendprase2.entity.impl.OrderDetail;
-import lk.ijse.posbackendprase2.entity.impl.User;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +26,6 @@ public class Mapping {
         return modelMapper.map(customerList, new TypeToken<List<lk.ijse.posbackendprase2.dto.impl.CustomerDto>>() {}.getType());
     }
 
-    //User DTO, Entity & List of Users
-    public User toUserEntity(UserDto dto) {
-        return modelMapper.map(dto, User.class);
-    }
-
-    public UserDto toUserDto(User user){
-        return modelMapper.map(user, UserDto.class);
-    }
-
-    public List<UserDto> asUserDto(List<User> userList) {
-        return modelMapper.map(userList, new TypeToken<List<UserDto>>() {}.getType());
-    }
 
     //Item DTO, Entity & List of Items
     public lk.ijse.posbackendprase2.entity.impl.Item toItemEntity(lk.ijse.posbackendprase2.dto.impl.ItemDto dto){

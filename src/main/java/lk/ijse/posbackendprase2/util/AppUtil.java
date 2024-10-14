@@ -3,9 +3,6 @@ package lk.ijse.posbackendprase2.util;
 import java.util.UUID;
 
 public class AppUtil {
-    public static String generateUserId(){
-        return "USERID-" + UUID.randomUUID();
-    }
 
     public static String generateCustomerId(){
         return "CUSID-" + UUID.randomUUID();
