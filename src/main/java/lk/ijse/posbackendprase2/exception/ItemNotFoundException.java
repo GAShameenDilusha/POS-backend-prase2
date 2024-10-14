@@ -1,4 +1,15 @@
 package lk.ijse.posbackendprase2.exception;
 
-public class ItemNotFoundException {
+public class ItemNotFoundException extends RuntimeException {
+    public ItemNotFoundException(String message) {
+        super(message);
+    }
+
+    public ItemNotFoundException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public ItemNotFoundException(Throwable cause) {
+        super(cause);
+    }
 }
