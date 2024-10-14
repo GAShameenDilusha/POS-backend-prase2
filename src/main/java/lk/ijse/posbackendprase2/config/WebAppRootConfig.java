@@ -17,32 +17,36 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.posbackendprase2")
-@EnableJpaRepositories(basePackages = "lk.ijse.posbackendprase2.dao")
+@EnableJpaRepositories(basePackages = "lk.ijse.posbackendprase2")
 @EnableTransactionManagement
 public class WebAppRootConfig {
     @Bean
-    public ModelMapper modelMapper() {
+    public ModelMapper modelMapper(){
         return new ModelMapper();
     }
+
     @Bean
     public DataSource dataSource() {
-        var dmds = new DriverManagerDataSource();
-        dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dmds.setUrl("jdbc:mysql://localhost:3306/noteTaker2024AAD67?createDatabaseIfNotExist=true");
-        dmds.setUsername("root");
-        dmds.setPassword("sha1234");
-        return dmds;
+        var data = new DriverManagerDataSource();
+        data.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        data.setUrl("jdbc:mysql://localhost:3306/posbe2?createDatabaseIfNotExist=true");
+        data.setUsername("root");
+        data.setPassword("Mixage03!");
+        return data;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
+
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("lk.ijse.gdse.aad67.notecollecter67.entity.impl");
+        factory.setPackagesToScan("com.example.posbe.entity.impl");
         factory.setDataSource(dataSource());
         return factory;
     }
+
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager txManager = new JpaTransactionManager();
