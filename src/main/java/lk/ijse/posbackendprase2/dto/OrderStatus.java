@@ -1,4 +1,7 @@
 package lk.ijse.posbackendprase2.dto;
 
-public interface OrderStatus {
+
+import java.io.Serializable;
+
+public interface OrderStatus extends Serializable, SuperDto {
 }
