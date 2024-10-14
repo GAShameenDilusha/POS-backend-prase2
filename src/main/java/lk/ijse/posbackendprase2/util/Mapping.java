@@ -3,6 +3,7 @@ package lk.ijse.posbackendprase2.util;
 
 import lk.ijse.posbackendprase2.dto.impl.UserDto;
 import lk.ijse.posbackendprase2.entity.impl.OrderDetail;
+import lk.ijse.posbackendprase2.entity.impl.User;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
