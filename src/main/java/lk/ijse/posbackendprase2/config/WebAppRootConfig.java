@@ -31,7 +31,7 @@ public class WebAppRootConfig {
         data.setDriverClassName("com.mysql.cj.jdbc.Driver");
         data.setUrl("jdbc:mysql://localhost:3306/posbe2?createDatabaseIfNotExist=true");
         data.setUsername("root");
-        data.setPassword("Mixage03!");
+        data.setPassword("sha1234");
         return data;
     }
 
@@ -42,7 +42,7 @@ public class WebAppRootConfig {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("com.example.posbe.entity.impl");
+        factory.setPackagesToScan("lk.ijse.posbackendprase2.entity.impl");
         factory.setDataSource(dataSource());
         return factory;
     }
